@@ -15,6 +15,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 800 !important;
 }
 
+hr {
+	border-width: 5px;
+
+	&.tiny {
+		max-width: 100px;
+	}
+}
+
 section:first-of-type {
 	& + section {
 		padding-top: 78px;
@@ -36,6 +44,21 @@ section:first-of-type {
 	}
 }
 
+// Fixed Aspect Ratios
+.ratio-landscape, .ratio-square, .ratio-portrait {
+	position: relative;
+    display: block;
+
+	&:before{
+        content: "";
+        display: block;
+    }
+}
+
+.ratio-landscape:before{ padding-top: 50%; }
+.ratio-square:before{ padding-top: 100%; }
+.ratio-portrait:before{ padding-top: 150%; }
+
 .text-constrained { max-width: 750px; }
 .background-top { background-position: top; }
 .background-center { background-position: center; }
@@ -43,7 +66,7 @@ section:first-of-type {
 .background-cover { background-size: cover; }
 .overflow-hidden { overflow: hidden; }
 .border-transparent { border-color: transparent; }
-.text-constrained { max-width: 700px; }
+.border-none { border: none; }
 .full-screen {
 	position: absolute;
 	top: 0;
@@ -59,8 +82,11 @@ section:first-of-type {
 	border-radius: 0;
 	background-color: transparent;
 }
+.shadow-sm { box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.3) !important; }
 
+.strong { font-weight: 600; letter-spacing: -.5px; }
 .width-full { width: 100%; }
+.ls-condensed { letter-spacing: -.5px; }
 
 .soft-double { padding: $base-spacing-unit * 2 !important; }
 .soft-double-top { padding-top: $base-spacing-unit * 2 !important; }
