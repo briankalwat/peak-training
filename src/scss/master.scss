@@ -75,6 +75,40 @@ section:first-of-type {
 	left: 0;
 }
 
+.mobile-nav {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: $tertiary;
+	z-index: 1000;
+
+	&.open {
+		display: block;
+	}
+
+	.close {
+		margin-right: $base-spacing-unit;
+		margin-top: $base-spacing-unit;
+		font-size: 1.6rem;
+		color: $white;
+		text-shadow: none;
+		opacity: 1;
+	}
+
+	.nav {
+		display: block;
+		width: 80%;
+		margin: 150px auto 0;
+
+		a {
+			font-size: 1.6rem;
+		}
+	}
+}
+
 // Bootstrap Overrides
 .lead { font-weight: inherit; }
 .btn, .nav-link { letter-spacing: -.3px; }

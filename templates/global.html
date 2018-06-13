@@ -12,38 +12,70 @@
         <link rel="stylesheet" href="./dest/css/master.css">
 
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-oi8o31xSQq8S0RpBcb4FaLB8LJi9AT8oIdmS1QldR8Ui7KUQjNAnDlJjp55Ba8FG" crossorigin="anonymous">
-    </head>
-	<body data-spy="scroll">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-        <section class="position-fixed width-full shadow" style="top: 0; z-index: 100; background-color: rgba(255,255,255,.97);">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#253746">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+	<body>
+
+        <section id="main-nav" class="position-fixed width-full shadow" style="top: 0; z-index: 100; background-color: rgba(255,255,255,.97);">
 
             <a href="/"><img src="/assets/peak-logo-blue.png" class="" style="margin: 1.5rem; max-width: 200px;" alt=""></a>
 
             <div class="p-1 float-right d-none d-md-block">
                 <ul class="nav nav-pills">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#home"><b>Home</b></a>
+                  <li class="nav-item ml-1">
+                    <a class="nav-link pr-0 pl-1" href="#home"><b>Home</b></a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#about"><b>About</b></a>
+                  <li class="nav-item ml-1">
+                    <a class="nav-link pr-0 pl-1" href="#about"><b>About</b></a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#basecamp"><b>Base Camp</b></a>
+                  <li class="nav-item ml-1">
+                    <a class="nav-link pr-0 pl-1" href="#basecamp"><b>Base Camp</b></a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#team"><b>Our Team</b></a>
+                  <li class="nav-item ml-1">
+                    <a class="nav-link pr-0 pl-1" href="#team"><b>Our Team</b></a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#contact"><b>Contact</b></a>
+                  <li class="nav-item ml-1">
+                    <a class="nav-link px-1" href="#contact"><b>Contact</b></a>
                   </li>
                 </ul>
             </div>
+
+            <a id="nav-trigger" href="#" class="float-right text-tertiary d-md-none"><i class="fas fa-2x fa-bars" style="margin-top: 22px; margin-right: 26px;"></i></a>
 
         </section>
     
         {% block content %}
         {% endblock %}
+
+        <div id="mobile-nav" class="mobile-nav">
+            <a id="nav-close-trigger" href="#" class="close"><i class="fas fa-2x fa-times"></i></a>
+
+            <ul class="nav flex-column nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home"><b>Home</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><b>About</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#basecamp"><b>Base Camp</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team"><b>Our Team</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact"><b>Contact</b></a>
+                </li>
+            </ul>
+        </div>
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -53,6 +85,28 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <!-- Javascript -->
         <script src="./dest/js/main.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('#nav-trigger').on('click',function(e){
+                    e.preventDefault();
+                    $('#mobile-nav').addClass('open');
+                    $('body').addClass('overflow-hidden');
+                });
+
+                $('#nav-close-trigger').on('click',function(e){
+                    e.preventDefault();
+                    $('#mobile-nav').removeClass('open');
+                    $('body').removeClass('overflow-hidden');
+                });
+
+                $('#mobile-nav .nav-link').on('click',function(e){
+                    e.preventDefault();
+                    $('#mobile-nav').removeClass('open');
+                    $('body').removeClass('overflow-hidden');
+                });
+            });
+        </script>
 
 	</body>
 </html>
