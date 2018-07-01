@@ -29,9 +29,36 @@ section:first-of-type {
 	}
 }
 
+blockquote, .blockquote {
+	position: relative;
+	font-size: $font-size-base*1.1;
+	font-style: italic;
+	letter-spacing: -.2px;
+
+	&:before {
+		position: absolute;
+		top: -$base-spacing-unit*2;
+		left: -$base-spacing-unit;
+		content: '\f10d';
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		font-size: $font-size-base*7;
+		opacity: .05;
+		z-index: -1;
+	}
+
+	.blockquote-footer {
+		color: $gray-900;
+		font-size: 120%;
+		font-weight: 900;
+		letter-spacing: -.5px;
+		margin-bottom: 0;
+	}
+}
+
 .hero-image-position {
 	background-repeat: no-repeat;
-	background-position: center -240px !important;
+	background-position: center 0px !important;
 
 	@media (min-width: 576px) and (max-width: 767px) {
 		background-size: 180% !important;
@@ -121,6 +148,19 @@ section:first-of-type {
 .strong { font-weight: 600; letter-spacing: -.5px; }
 .width-full { width: 100%; }
 .ls-condensed { letter-spacing: -.5px; }
+
+.bd-callout {
+	padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}
+
+.bd-callout-warning {
+	border-left-color: $warning;
+}
 
 .soft-double { padding: $base-spacing-unit * 2 !important; }
 .soft-double-top { padding-top: $base-spacing-unit * 2 !important; }
