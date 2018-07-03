@@ -8,6 +8,7 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: #000;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,6 +56,19 @@ blockquote, .blockquote {
 		margin-bottom: 0;
 	}
 }
+
+.parallax-mirror {
+	opacity: 1;
+}
+
+.parallax-mirror:nth-child(20n+3) {
+	opacity: .7;
+}
+
+// body > .parallax-mirror + .parallax-mirror {
+// 	opacity: 1;
+// }
+
 
 .hero-image-position {
 	background-repeat: no-repeat;
