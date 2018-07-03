@@ -57,6 +57,26 @@ blockquote, .blockquote {
 	}
 }
 
+.bg-image-shim {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: #000;
+		opacity: .3;
+	}
+}
+
+.bring-forward {
+	position: relative;
+	z-index: 10;
+}
+
 .parallax-mirror {
 	opacity: 1;
 }
@@ -64,11 +84,6 @@ blockquote, .blockquote {
 .parallax-mirror:nth-child(20n+3) {
 	opacity: .7;
 }
-
-// body > .parallax-mirror + .parallax-mirror {
-// 	opacity: 1;
-// }
-
 
 .hero-image-position {
 	background-repeat: no-repeat;
@@ -123,7 +138,7 @@ blockquote, .blockquote {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: $tertiary;
+	background-color: $primary;
 	z-index: 1000;
 
 	&.open {
@@ -144,8 +159,9 @@ blockquote, .blockquote {
 		width: 80%;
 		margin: 150px auto 0;
 
-		a {
-			font-size: 1.6rem;
+		a, a:hover {
+			color: $white;
+			font-size: 2rem;
 		}
 	}
 }
@@ -320,6 +336,10 @@ blockquote, .blockquote {
 	h4, .h4 { font-size: $font-size-base * 1.7 !important; }
 	h5, .h5 { font-size: $font-size-base * 1.5 !important; }
 	h6, .h6 { font-size: $font-size-base * 1.2 !important; }
+
+	.xs-ratio-landscape:before{ padding-top: 50%; }
+	.xs-ratio-square:before{ padding-top: 100%; }
+	.xs-ratio-portrait:before{ padding-top: 150%; }
 
 	.xs-text-center { text-align: center; }
 	.xs-text-left { text-align: left; }
