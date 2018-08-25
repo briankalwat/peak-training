@@ -24,6 +24,8 @@ hr {
 	}
 }
 
+.list-bulletless { list-style: none; }
+
 section:first-of-type {
 	& + section {
 		padding-top: 78px;
@@ -101,7 +103,7 @@ blockquote, .blockquote {
 }
 
 // Fixed Aspect Ratios
-.ratio-landscape, .ratio-square, .ratio-portrait {
+.ratio-thin, .ratio-landscape, .ratio-square, .ratio-portrait {
 	position: relative;
     display: block;
 
@@ -111,6 +113,7 @@ blockquote, .blockquote {
     }
 }
 
+.ratio-thin:before{ padding-top: 40%; }
 .ratio-landscape:before{ padding-top: 50%; }
 .ratio-square:before{ padding-top: 100%; }
 .ratio-portrait:before{ padding-top: 150%; }
@@ -336,6 +339,8 @@ blockquote, .blockquote {
 	h4, .h4 { font-size: $font-size-base * 1.7 !important; }
 	h5, .h5 { font-size: $font-size-base * 1.5 !important; }
 	h6, .h6 { font-size: $font-size-base * 1.2 !important; }
+
+	.xs-list-bulletless { list-style: none; }
 
 	.xs-ratio-landscape:before{ padding-top: 50%; }
 	.xs-ratio-square:before{ padding-top: 100%; }
